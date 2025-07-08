@@ -44,3 +44,20 @@ export async function DELETE(request, { params }) {
     return NextResponse.json({ error: "Internal server error" }, { status: 500 })
   }
 }
+
+export async function GET(request, { params }) {
+  const awaitedParams = await params
+  try {
+    const { id } = awaitedParams
+
+    const result = await taskController.getTask(id)
+
+    if (!result.success) {
+      return NextResponse.json({ error: result.error }, { status: 400 })
+    }
+
+    return NextResponse.json(result)
+  } catch (error) {
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 })
+  }
+}

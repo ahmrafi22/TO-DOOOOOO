@@ -14,18 +14,86 @@ JWT_SECRET="your_jwt_secret_here"
 
 ---
 
-## ⚡ Getting Started
+## 🌲 File Tree
+
+```env
+
+├─] .env <- env on root folder 
+├── .gitignore
+├─] .next/ 
+├── eslint.config.mjs
+├── jsconfig.json
+├── lib/
+│   └── utils.ts
+├── next.config.mjs
+├─] node_modules/
+├── package-lock.json
+├── package.json
+├── postcss.config.mjs
+├── public/
+│   ├── file.svg
+│   ├── globe.svg
+│   ├── next.svg
+│   ├── vercel.svg
+│   └── window.svg
+├── README.md
+├── scripts/
+│   └── 01-create-tables.sql
+└── src/
+    ├── app/
+    │   ├── api/
+    │   │   ├── auth/
+    │   │   │   ├── login/
+    │   │   │   │   └── route.js
+    │   │   │   └── register/
+    │   │   │       └── route.js
+    │   │   └── tasks/
+    │   │       ├── route.js
+    │   │       └── [id]/
+    │   │           ├── route.js
+    │   │           └── toggle/
+    │   │               └── route.js
+    │   ├── favicon.ico
+    │   ├── globals.css
+    │   ├── layout.jsx
+    │   ├── page.jsx
+    │   └── todo/
+    │       ├── page.jsx
+    │       ├── [id]/
+    │       │   └── page.jsx
+    │       └── _components/
+    │           ├── navbar.jsx
+    │           └── tasks.jsx
+    ├── components/
+    │   ├── auth-dialog.jsx
+    │   └── ui/
+    │       └── dialog.tsx
+    ├── controllers/
+    │   ├── authController.js
+    │   └── taskController.js
+    └── models/
+        ├── task.js
+        └── user.js
+
+```
+
+---
+
+## ⚡ Getting Started 
 
 ```bash
 npm install
 npm run dev
+
+"run these commands in terminal from root direactory" 
 ```
 
 ## 🗂️ Project Structure
 
 - `src/app/page.jsx`: The first landing page.
 - `src/app/todo/page.jsx`: The main Todo page where users can see and manage their tasks.
-- `scripts/01-create-tables.sql`: SQL file containing queries to create necessary database tables.
+- `src/app/todo/[id]page.jsx`: Dynamic single page to show each task in detail.
+
 
 ## 🧩 Auth Dialog
 
@@ -90,9 +158,3 @@ API route ➡️ Controller ➡️ Model ➡️ Database
 
 The `scripts/01-create-tables.sql` file contains the SQL commands needed to create database tables. Run these on neondb .
 
-## 🚀 Run It
-
-```bash
-npm install
-npm run dev
-```

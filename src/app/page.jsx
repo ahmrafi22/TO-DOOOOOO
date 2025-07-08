@@ -24,12 +24,11 @@ export default function HomePage() {
       setUser(JSON.parse(userData))
     }
 
-    // Start rhythm animation after entrance animation completes
+
     const rhythmTimer = setTimeout(() => {
       setShowRhythm(true)
     }, 1800)
 
-    // Remove overflow hidden after initial loading
     const overflowTimer = setTimeout(() => {
       setHideOverflow(false)
     }, 2200)

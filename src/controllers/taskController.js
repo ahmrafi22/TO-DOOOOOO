@@ -84,4 +84,22 @@ export const taskController = {
       }
     }
   },
+
+  async getTask(id) {
+    try {
+      const task = await Task.findById(id)
+      if (!task) {
+        throw new Error("Task not found")
+      }
+      return {
+        success: true,
+        task,
+      }
+    } catch (error) {
+      return {
+        success: false,
+        error: error.message,
+      }
+    }
+  },
 }
